@@ -58,6 +58,8 @@
     },
     "dotnet.defaultSolution": "PointAndClick.sln",
     "cSpell.words": [
-        "Behaviour"
+        "Behaviour",
+        "interactable",
+        "Raycast"
     ]
 }

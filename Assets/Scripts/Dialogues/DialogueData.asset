@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6073a06cad05943448da8dfc7e8a8be1, type: 3}
+  m_Name: DialogueData
+  m_EditorClassIdentifier: 
+  Look:
+  - dialogID: 0
+    dialogName: Flower
+    dialogMessage: Curiosa flor...
+  - dialogID: 1
+    dialogName: Coconut
+    dialogMessage: Es un coco
+  - dialogID: 2
+    dialogName: Box
+    dialogMessage: Es una caja de suministros
+  - dialogID: 3
+    dialogName: Player
+    dialogMessage: "\xA1Hola! \xA1Soy yo ayuda!"
+  Use:
+  - dialogID: 0
+    dialogName: Flower
+    dialogMessage: No me esperaba eso...
+  - dialogID: 1
+    dialogName: Coconut
+    dialogMessage: No puedo usar eso
+  - dialogID: 2
+    dialogName: Box
+    dialogMessage: "Primero deber\xEDa cogerla"
+  - dialogID: 3
+    dialogName: Player
+    dialogMessage: No me puedo usar a mi mismo
+  Take:
+  - dialogID: 0
+    dialogName: Flower
+    dialogMessage: No me la voy a llevar.
+  - dialogID: 1
+    dialogName: Coconut
+    dialogMessage: "\xA1Nada como el agua de coco!"
+  - dialogID: 2
+    dialogName: Box
+    dialogMessage: "\xA1Perfecto! \xA1Un lanza bengalas!"
+  - dialogID: 3
+    dialogName: Player
+    dialogMessage: "\xBFY a donde me llevo?"

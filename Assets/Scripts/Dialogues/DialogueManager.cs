@@ -1,56 +1,93 @@
+using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    // public Dialogue[] dialogues;
+    public DialogueData dialogueData;
+    public TextMeshProUGUI textMeshPro;
+    public string message;
+    public float letterDelay = 0.08f;
+    private Coroutine typingCoroutine;
 
-    public void ShowMessage(string id, int messageIndex)
+    public void ShowMessage(string id, string dialogType)
     {
-        foreach (Dialogue dialogue in dialogues)
+        if (dialogType == "Look")
         {
-            if (dialogue.dialogID == id) {
-                Debug.Log(dialogue.GetMessage(messageIndex));
-                return;
+            foreach (Dialogue dialogue in dialogueData.Look)
+            {
+                if (dialogue.dialogID == id)
+                {
+                    try
+                    {
+                        message = dialogue.dialogMessage;
+                        StartDialogue();
+                    }
+                    catch (System.ArgumentOutOfRangeException e)
+                    {
+                        Debug.LogError("Message index out of range: " + e.Message);
+                    }
+                }
             }
         }
-        Debug.LogWarning("Dialog not found on that ID: " + id);
+        else if (dialogType == "Use")
+        {
+            foreach (Dialogue dialogue in dialogueData.Use)
+            {
+                if (dialogue.dialogID == id)
+                {
+                    try
+                    {
+                        message = dialogue.dialogMessage;
+                        StartDialogue();
+                    }
+                    catch (System.ArgumentOutOfRangeException e)
+                    {
+                        Debug.LogError("Message index out of range: " + e.Message);
+                    }
+                }
+            }
+        }
+        else if (dialogType == "Take")
+        {
+            foreach (Dialogue dialogue in dialogueData.Take)
+            {
+                if (dialogue.dialogID == id)
+                {
+                    try
+                    {
+                        message = dialogue.dialogMessage;
+                        StartDialogue();
+                    }
+                    catch (System.ArgumentOutOfRangeException e)
+                    {
+                        Debug.LogError("Message index out of range: " + e.Message);
+                    }
+                }
+            }
+        }
+        else
+        {
+            Debug.LogError("Invalid dialog type: " + dialogType);
+        }
+    }
+
+    public void StartDialogue()
+    {
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+        }
+        typingCoroutine = StartCoroutine(TypeDialogue());
+    }
+
+    IEnumerator TypeDialogue()
+    {
+        textMeshPro.text = "";
+        foreach (char letter in message)
+        {
+            textMeshPro.text += letter;
+            yield return new WaitForSeconds(letterDelay);
+        }
     }
 }
-
-// region OLD SYSTEM
-// using System.Collections;
-// using TMPro;
-// using UnityEngine;
-
-// public class DialogueManager : MonoBehaviour
-// {
-//     public TextMeshProUGUI textMeshPro;
-//     public Dialogue[] dialogues;
-//     public float letterDelay = 0.05f; // Letter delay
-//     private Coroutine typingCoroutine;
-
-//     // Start is called before the first frame update
-//     void Start()
-//     {
-//         StartDialogue();
-//     }
-
-//     public void StartDialogue()
-//     {
-//         typingCoroutine = StartCoroutine(TypeDialogue()); // Start coroutine
-//     }
-
-//     IEnumerator TypeDialogue()
-//     {
-//         foreach(Dialogue dialogue in dialogues)
-//         {
-//             textMeshPro.text = "";
-//             foreach (char letter in dialogues)
-//             {
-//                 textMeshPro.text += letter;
-//                 yield return new WaitForSeconds(letterDelay);
-//             }
-//         }
-//     }
-// }
-// endregion
