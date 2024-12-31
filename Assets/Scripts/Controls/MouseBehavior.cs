@@ -1,103 +1,52 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class MouseBehavior : MonoBehaviour
 {
-    private FlowerProperties flowerProperties;
-    private PlayerProperties playerProperties;
-    private CoconutProperties coconutProperties;
-    private BoxProperties boxProperties;
+    private GameObject selectedObject;
+    private Vector2 mousePosition;
 
-
-    public ButtonsBehavior buttonsBehavior;
-    private PointerEventData pointerData;
-    private Ray ray;
-    private RaycastHit2D hit;
-
-    void Start()
+    private void Update()
     {
-        flowerProperties = GetComponent<FlowerProperties>();
-        playerProperties = GetComponent<PlayerProperties>();
-        coconutProperties = GetComponent<CoconutProperties>();
-        boxProperties = GetComponent<BoxProperties>();
+        DetectMousePosition();
+    }
 
-        GameObject eventSystem = GameObject.Find("GameManager");
+    private void DetectMousePosition()
+    {
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
 
-        if (eventSystem != null)
+        if (hit.collider != null)
         {
-            buttonsBehavior = eventSystem.GetComponent<ButtonsBehavior>();
-            if (buttonsBehavior == null)
-            {
-                Debug.LogError("ButtonsBehavior not found");
-            }
+            selectedObject = hit.collider.gameObject;
+            mousePosition = Camera.main.WorldToScreenPoint(selectedObject.transform.position);
         }
         else
         {
-            Debug.LogError("GameManager not found");
+            selectedObject = null;
         }
     }
 
-    void Update()
+    private void OnGUI()
     {
-        if (Input.GetMouseButtonDown(0))
+        GUIStyle guiStyle = new()
         {
-            DetectObjectClick(new PointerEventData(EventSystem.current));
+            fontSize = 50,
+            fontStyle = FontStyle.Bold,
+            padding = new RectOffset(5, 5, 5, 5),
+            alignment = TextAnchor.LowerCenter,
+        };
+
+        guiStyle.normal.textColor = Color.black;
+
+        if (selectedObject != null)
+        {
+            GUI.Label(new Rect(mousePosition.x, Screen.height - mousePosition.y + 5, 10, 20), selectedObject.name, guiStyle);
+            GUI.Label(new Rect(mousePosition.x, Screen.height - mousePosition.y - 5, 10, 20), selectedObject.name, guiStyle);
+            GUI.Label(new Rect(mousePosition.x + 5, Screen.height - mousePosition.y, 10, 20), selectedObject.name, guiStyle);
+            GUI.Label(new Rect(mousePosition.x - 5, Screen.height - mousePosition.y, 10, 20), selectedObject.name, guiStyle);
+
+            guiStyle.normal.textColor = Color.yellow;
+            GUI.Label(new Rect(mousePosition.x, Screen.height - mousePosition.y, 10, 20), selectedObject.name, guiStyle);
         }
     }
-
-    // region Mouse position detection
-    // private void UpdateMousePosition()
-    // {
-    //     mousePosition = Input.mousePosition;
-    //     if (mousePosition != Vector2.zero)
-    //     {
-    //         worldPoint = Camera.main.ScreenToWorldPoint(mousePosition);
-    //         ray = new Ray2D(worldPoint, Vector2.down);
-    //         hit = Physics2D.Raycast(ray.origin, ray.direction);
-
-    //         Debug.Log("Ray: " + ray + "Hit: " + hit);
-
-    //         if (hit.collider != null && hit.collider.CompareTag("ClickableZone"))
-    //         {
-    //             selectedObject = hit.collider.gameObject;
-    //             Debug.Log("Hit object: " + selectedObject.name);
-    //         }
-    //     }
-    // }
-    // endregion
-
-    public void DetectObjectClick(BaseEventData data)
-    {
-        pointerData = (PointerEventData)data;
-        ray = Camera.main.ScreenPointToRay(pointerData.position);
-        hit = Physics2D.Raycast(ray.origin, ray.direction);
-
-        if (hit.collider != null && hit.collider.gameObject == gameObject)
-        {
-            if (gameObject.name == "Flower")
-            {
-                flowerProperties.OnMouseClick();
-            }
-            else if (gameObject.name == "Coconut")
-            {
-                coconutProperties.OnMouseClick();
-            }
-            else if (gameObject.name == "Box")
-            {
-                boxProperties.OnMouseClick();
-            }
-            else if (gameObject.name == "Player")
-            {
-                playerProperties.OnMouseClick();
-            }
-        }
-    }
-
-    // void OnGUI()
-    // {
-    //     GUI.Label(new Rect(10, 10, 300, 20), "Mouse position: " + pointerData.position);
-    //     GUI.Label(new Rect(10, 50, 300, 20), "Ray: " + ray);
-    //     GUI.Label(new Rect(10, 50, 300, 20), "RayCast: " + hit);
-    //     GUI.Label(new Rect(10, 100, 300, 20), "World: " + worldPoint);
-    // }
 }
