@@ -1,18 +1,76 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ButtonsBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private bool btnLook = false;
+    private bool btnUse = false;
+    private bool btnTake = false;
+
+    private void Start()
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool GetBtnLook()
     {
-        
+        return btnLook;
+    }
+
+    public bool GetBtnUse()
+    {
+        return btnUse;
+    }
+
+    public bool GetBtnTake()
+    {
+        return btnTake;
+    }
+
+    public void Look()
+    {
+        if (!btnLook)
+        {
+            btnLook = true;
+            btnTake = false;
+            btnUse = false;
+        }
+        else
+        {
+            btnLook = false;
+        }
+    }
+
+    public void Use()
+    {
+        if (!btnUse)
+        {
+            btnUse = true;
+            btnTake = false;
+            btnLook = false;
+        }
+        else
+        {
+            btnUse = false;
+        }
+    }
+
+    public void Take()
+    {
+        if (!btnTake)
+        {
+            btnTake = true;
+            btnUse = false;
+            btnLook = false;
+        }
+        else
+        {
+            btnTake = false;
+        }
+    }
+
+    public void ResetButtons()
+    {
+        btnLook = false;
+        btnUse = false;
+        btnTake = false;
     }
 }

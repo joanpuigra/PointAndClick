@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - ClickableZone
+  - Clickable
   layers:
   - Default
   - TransparentFX
