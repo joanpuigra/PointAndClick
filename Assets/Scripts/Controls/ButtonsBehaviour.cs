@@ -6,10 +6,6 @@ public class ButtonsBehaviour : MonoBehaviour
     private bool btnUse = false;
     private bool btnTake = false;
 
-    private void Start()
-    {
-    }
-
     public bool GetBtnLook()
     {
         return btnLook;

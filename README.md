@@ -1,7 +1,9 @@
 # PointAndClick
-School Project - To many problems on the Raycast and Clickable Colliders.
+School Project for a Point and Click adventure style.
 
-**BUTTONS NOT WORKING v0.1**
+You are in a deserted island because your ship went sunken, your objective is to survive and get rescued.
+
+![alt text](Assets/Images/Readme/PointAndClick01.png)
 
 ## Assets
 - [Background](https://assetstore.unity.com/packages/2d/environments/9-free-backgrounds-285183)

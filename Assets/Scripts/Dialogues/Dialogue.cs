@@ -1,7 +1,7 @@
 [System.Serializable]
 public class Dialogue
 {
-    public string dialogID;
+    public int dialogID;
     public string dialogName;
     public string dialogMessage;
 }

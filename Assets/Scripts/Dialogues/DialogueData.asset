@@ -14,40 +14,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Look:
   - dialogID: 0
-    dialogName: Flower
+    dialogName: Flor
     dialogMessage: Curiosa flor...
   - dialogID: 1
-    dialogName: Coconut
+    dialogName: Coco
     dialogMessage: Es un coco
   - dialogID: 2
-    dialogName: Box
+    dialogName: Caja
     dialogMessage: Es una caja de suministros
   - dialogID: 3
-    dialogName: Player
+    dialogName: Jugador
     dialogMessage: "\xA1Hola! \xA1Soy yo ayuda!"
   Use:
   - dialogID: 0
-    dialogName: Flower
+    dialogName: Flor
     dialogMessage: No me esperaba eso...
   - dialogID: 1
-    dialogName: Coconut
+    dialogName: Coco
     dialogMessage: No puedo usar eso
   - dialogID: 2
-    dialogName: Box
+    dialogName: Caja
     dialogMessage: "Primero deber\xEDa cogerla"
   - dialogID: 3
-    dialogName: Player
+    dialogName: Jugador
     dialogMessage: No me puedo usar a mi mismo
   Take:
   - dialogID: 0
-    dialogName: Flower
+    dialogName: Flor
     dialogMessage: No me la voy a llevar.
   - dialogID: 1
-    dialogName: Coconut
+    dialogName: Coco
     dialogMessage: "\xA1Nada como el agua de coco!"
   - dialogID: 2
-    dialogName: Box
+    dialogName: Caja
     dialogMessage: "\xA1Perfecto! \xA1Un lanza bengalas!"
   - dialogID: 3
-    dialogName: Player
+    dialogName: Jugador
     dialogMessage: "\xBFY a donde me llevo?"

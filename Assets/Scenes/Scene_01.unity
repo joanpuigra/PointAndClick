@@ -608,7 +608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13dddecf047c5444e8dc34b870f863b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
+  gameManager: {fileID: 563874683}
 --- !u!1 &495731162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,7 +1514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2af056d6ade141769629825886b2e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
+  gameManager: {fileID: 563874683}
 --- !u!212 &1010250776
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1671,7 +1671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c117bc22d03aa437a8b8f20a3a5e7661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
+  gameManager: {fileID: 563874683}
 --- !u!212 &1043945908
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1851,6 +1851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
+  gameManager: {fileID: 563874683}
 --- !u!212 &1139201191
 SpriteRenderer:
   m_ObjectHideFlags: 0
