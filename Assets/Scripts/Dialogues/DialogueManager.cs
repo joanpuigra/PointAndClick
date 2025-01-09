@@ -30,6 +30,9 @@ public class DialogueManager : MonoBehaviour
             case "Take":
                 dialogues = dialogueData.Take;
                 break;
+            case "Interaction":
+                dialogues = dialogueData.Interaction;
+                break;
             default:
                 Debug.LogError("Invalid dialog type: " + dialogType);
                 return;
@@ -54,68 +57,6 @@ public class DialogueManager : MonoBehaviour
 
         Debug.LogError("Dialog ID not found: " + id);
     }
-
-    // public void ShowMessage(string id, string dialogType)
-    // {
-    //     if (dialogType == "Look")
-    //     {
-    //         foreach (Dialogue dialogue in dialogueData.Look)
-    //         {
-    //             if (dialogue.dialogID == id)
-    //             {
-    //                 try
-    //                 {
-    //                     message = dialogue.dialogMessage;
-    //                     StartDialogue();
-    //                 }
-    //                 catch (System.ArgumentOutOfRangeException e)
-    //                 {
-    //                     Debug.LogError("Message index out of range: " + e.Message);
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     else if (dialogType == "Use")
-    //     {
-    //         foreach (Dialogue dialogue in dialogueData.Use)
-    //         {
-    //             if (dialogue.dialogID == id)
-    //             {
-    //                 try
-    //                 {
-    //                     message = dialogue.dialogMessage;
-    //                     StartDialogue();
-    //                 }
-    //                 catch (System.ArgumentOutOfRangeException e)
-    //                 {
-    //                     Debug.LogError("Message index out of range: " + e.Message);
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     else if (dialogType == "Take")
-    //     {
-    //         foreach (Dialogue dialogue in dialogueData.Take)
-    //         {
-    //             if (dialogue.dialogID == id)
-    //             {
-    //                 try
-    //                 {
-    //                     message = dialogue.dialogMessage;
-    //                     StartDialogue();
-    //                 }
-    //                 catch (System.ArgumentOutOfRangeException e)
-    //                 {
-    //                     Debug.LogError("Message index out of range: " + e.Message);
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     else
-    //     {
-    //         Debug.LogError("Invalid dialog type: " + dialogType);
-    //     }
-    // }
 
     private void StartDialogue()
     {

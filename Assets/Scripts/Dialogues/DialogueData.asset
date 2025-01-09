@@ -18,36 +18,58 @@ MonoBehaviour:
     dialogMessage: Curiosa flor...
   - dialogID: 1
     dialogName: Coco
-    dialogMessage: Es un coco
+    dialogMessage: Es un coco.
   - dialogID: 2
     dialogName: Caja
-    dialogMessage: Es una caja de suministros
+    dialogMessage: Es una caja de suministros.
   - dialogID: 3
     dialogName: Jugador
     dialogMessage: "\xA1Hola! \xA1Soy yo ayuda!"
+  - dialogID: 4
+    dialogName: Rama
+    dialogMessage: Es una rama.
   Use:
   - dialogID: 0
     dialogName: Flor
     dialogMessage: No me esperaba eso...
   - dialogID: 1
     dialogName: Coco
-    dialogMessage: No puedo usar eso
+    dialogMessage: Tengo mucha sed...
   - dialogID: 2
     dialogName: Caja
-    dialogMessage: "Primero deber\xEDa cogerla"
+    dialogMessage: "Primero deber\xEDa cogerla."
   - dialogID: 3
     dialogName: Jugador
-    dialogMessage: No me puedo usar a mi mismo
+    dialogMessage: No me puedo usar a mi mismo.
+  - dialogID: 4
+    dialogName: Rama
+    dialogMessage: "Primero deber\xEDa cogerla."
   Take:
   - dialogID: 0
     dialogName: Flor
     dialogMessage: No me la voy a llevar.
   - dialogID: 1
     dialogName: Coco
-    dialogMessage: "\xA1Nada como el agua de coco!"
+    dialogMessage: "Esto aplacar\xE1 mi sed."
   - dialogID: 2
     dialogName: Caja
-    dialogMessage: "\xA1Perfecto! \xA1Un lanza bengalas!"
+    dialogMessage: No puedo alcanzarla.
   - dialogID: 3
     dialogName: Jugador
     dialogMessage: "\xBFY a donde me llevo?"
+  - dialogID: 4
+    dialogName: Rama
+    dialogMessage: "Podr\xEDa serme util."
+  Interaction:
+  - dialogID: 0
+    dialogName: Flor
+    dialogMessage: Eso ha sido inesperado.
+  - dialogID: 1
+    dialogName: Coco
+    dialogMessage: "\xA1Nada como el agua de coco!"
+  - dialogID: 2
+    dialogName: Caja
+    dialogMessage: "\xA1Un lanzabengalas! \xA1Perfecto!"
+  - dialogID: 4
+    dialogName: Rama
+    dialogMessage: He usado la rama con la caja de suministros.

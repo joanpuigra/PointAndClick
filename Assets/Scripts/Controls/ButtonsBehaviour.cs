@@ -5,6 +5,12 @@ public class ButtonsBehaviour : MonoBehaviour
     private bool btnLook = false;
     private bool btnUse = false;
     private bool btnTake = false;
+    private InventoryManager inventoryManager;
+
+    void Start()
+    {
+        inventoryManager = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryManager>();
+    }
 
     public bool GetBtnLook()
     {
@@ -23,44 +29,20 @@ public class ButtonsBehaviour : MonoBehaviour
 
     public void Look()
     {
-        if (!btnLook)
-        {
-            btnLook = true;
-            btnTake = false;
-            btnUse = false;
-        }
-        else
-        {
-            btnLook = false;
-        }
+        ResetButtons();
+        btnLook = true;
     }
 
     public void Use()
     {
-        if (!btnUse)
-        {
-            btnUse = true;
-            btnTake = false;
-            btnLook = false;
-        }
-        else
-        {
-            btnUse = false;
-        }
+        ResetButtons();
+        btnUse = true;
     }
 
     public void Take()
     {
-        if (!btnTake)
-        {
-            btnTake = true;
-            btnUse = false;
-            btnLook = false;
-        }
-        else
-        {
-            btnTake = false;
-        }
+        ResetButtons();
+        btnTake = true;
     }
 
     public void ResetButtons()

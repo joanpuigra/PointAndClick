@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CoconutProperties : MonoBehaviour
+public class BranchProperties : MonoBehaviour
 {
     private Vector2 mousePosition;
     private ButtonsBehaviour buttons;
@@ -9,7 +9,7 @@ public class CoconutProperties : MonoBehaviour
     public GameObject gameManager;
     public GameObject inventory;
     public bool isActive = false;
-    public string itemName = "Coco";
+    public string itemName = "Rama";
 
 
     void Start()
@@ -43,18 +43,18 @@ public class CoconutProperties : MonoBehaviour
     {
         if (buttons.GetBtnLook())
         {
-            dialog.ShowMessage(1, "Look");
+            dialog.ShowMessage(4, "Look");
             buttons.ResetButtons();
         }
         if (buttons.GetBtnUse())
         {
-            dialog.ShowMessage(1, "Use");
+            dialog.ShowMessage(4, "Use");
             buttons.ResetButtons();
         }
         if (!isActive && buttons.GetBtnTake())
         {
             isActive = true;
-            dialog.ShowMessage(1, "Take");
+            dialog.ShowMessage(4, "Take");
             inventoryManager.AddItem(
                 this.GetComponent<SpriteRenderer>(),
                 itemName

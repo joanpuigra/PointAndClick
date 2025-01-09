@@ -4,18 +4,35 @@ public class BoxProperties : MonoBehaviour
 {
     private Vector2 mousePosition;
     public GameObject gameManager;
+    public GameObject inventory;
+    public FlareGunProperties flareGun;
+    private InventoryManager inventoryManager;
     private ButtonsBehaviour buttons;
     private DialogueManager dialog;
+    public bool movedBox = false;
+    public bool isActive = false;
 
     void Start()
     {
         buttons = gameManager.GetComponent<ButtonsBehaviour>();
         dialog = gameManager.GetComponent<DialogueManager>();
+        inventoryManager = inventory.GetComponent<InventoryManager>();
+        flareGun = GameObject.FindGameObjectWithTag("FlareGun").GetComponent<FlareGunProperties>();
     }
 
     void Update()
     {
         CheckButtonDown();
+    }
+
+    public void MoveBox()
+    {
+        if (!movedBox)
+        {
+            Transform box = this.gameObject.transform;
+            box.position = new Vector3(1.0f, 1.0f, 1.0f);
+            // movedBox = true;
+        }
     }
 
     private void CheckButtonDown()
@@ -47,5 +64,17 @@ public class BoxProperties : MonoBehaviour
         {
             dialog.ShowMessage(2, "Take");
         }
+        // if (!isActive && movedBox && buttons.GetBtnTake())
+        // {
+        //     isActive = true;
+        //     dialog.ShowMessage(2, "Interaction");
+        //     this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        //     this.GetComponent<SpriteRenderer>().sprite = null;
+        //     this.GetComponent<BoxCollider2D>().enabled = false;
+        //     // inventoryManager.AddItem(
+        //         // flareGun.GetComponent<SpriteRenderer(),
+        //         // "FlareGun"
+        //     // );
+        // }
     }
 }

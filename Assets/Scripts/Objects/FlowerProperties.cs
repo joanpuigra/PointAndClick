@@ -48,6 +48,10 @@ public class FlowerProperties : MonoBehaviour
             animator.SetBool("isActive", isActive);
             dialog.ShowMessage(0, "Use");
         }
+        else if (isActive && buttons.GetBtnUse())
+        {
+            dialog.ShowMessage(0, "Interaction");
+        }
         if (buttons.GetBtnTake())
         {
             dialog.ShowMessage(0, "Take");
