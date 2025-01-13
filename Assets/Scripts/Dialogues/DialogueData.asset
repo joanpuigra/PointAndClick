@@ -70,6 +70,9 @@ MonoBehaviour:
   - dialogID: 2
     dialogName: Caja
     dialogMessage: "\xA1Un lanzabengalas! \xA1Perfecto!"
+  - dialogID: 3
+    dialogName: Bengala
+    dialogMessage: Espero que alguien lo vea...
   - dialogID: 4
     dialogName: Rama
     dialogMessage: He usado la rama con la caja de suministros.

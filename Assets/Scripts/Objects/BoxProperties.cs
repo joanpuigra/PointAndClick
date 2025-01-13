@@ -30,8 +30,8 @@ public class BoxProperties : MonoBehaviour
         if (!movedBox)
         {
             Transform box = this.gameObject.transform;
-            box.position = new Vector3(1.0f, 1.0f, 1.0f);
-            // movedBox = true;
+            box.position = new Vector3(2.5f, -1.5f, 1.0f);
+            movedBox = true;
         }
     }
 
@@ -64,17 +64,14 @@ public class BoxProperties : MonoBehaviour
         {
             dialog.ShowMessage(2, "Take");
         }
-        // if (!isActive && movedBox && buttons.GetBtnTake())
-        // {
-        //     isActive = true;
-        //     dialog.ShowMessage(2, "Interaction");
-        //     this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        //     this.GetComponent<SpriteRenderer>().sprite = null;
-        //     this.GetComponent<BoxCollider2D>().enabled = false;
-        //     // inventoryManager.AddItem(
-        //         // flareGun.GetComponent<SpriteRenderer(),
-        //         // "FlareGun"
-        //     // );
-        // }
+        if (!isActive && movedBox && buttons.GetBtnTake())
+        {
+            isActive = true;
+            dialog.ShowMessage(2, "Interaction");
+            this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+            this.GetComponent<SpriteRenderer>().sprite = null;
+            this.GetComponent<BoxCollider2D>().enabled = false;
+            flareGun.AddFlareGun();
+        }
     }
 }

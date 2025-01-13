@@ -38,6 +38,13 @@ public class ItemInventory : MonoBehaviour
             inventoryManager.ResetInventoryButtons();
             boxProperties.MoveBox();
         }
+        if (itemName == "Bengala")
+        {
+            dialog.ShowMessage(3, "Interaction");
+            inventoryManager.RemoveItem(itemName);
+            buttons.ResetButtons();
+            inventoryManager.ResetInventoryButtons();
+        }
     }
 
     public bool GetIsActiveButton()
