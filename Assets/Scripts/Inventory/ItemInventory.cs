@@ -11,11 +11,13 @@ public class ItemInventory : MonoBehaviour
     private DialogueManager dialog;
     private GameObject inventoryNode;
     private BoxProperties boxProperties;
+    private FlareAnimation flare;
 
     void Start()
     {
         buttons = gameManager.GetComponent<ButtonsBehaviour>();
         dialog = gameManager.GetComponent<DialogueManager>();
+        flare = GameObject.FindGameObjectWithTag("Arm").GetComponent<FlareAnimation>();
         inventoryManager = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryManager>();
         boxProperties = GameObject.FindGameObjectWithTag("Box").GetComponent<BoxProperties>();
     }
@@ -44,6 +46,7 @@ public class ItemInventory : MonoBehaviour
             inventoryManager.RemoveItem(itemName);
             buttons.ResetButtons();
             inventoryManager.ResetInventoryButtons();
+            flare.ActivateAnimation();
         }
     }
 

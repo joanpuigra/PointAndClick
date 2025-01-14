@@ -12,3 +12,7 @@ You are in a deserted island because your ship went sunken, your objective is to
 - [Box](https://m.media-amazon.com/images/I/51rtPn9Of5L._AC_SL1001_.jpg)
 - [Branch](https://png.pngtree.com/element_our/20190528/ourmid/pngtree-spring-plant-branches-long-leaves-image_1179945.jpg)
 - [FlareGun](https://cults3d.com/es/modelo-3d/variado/orion-flare-gun)
+
+### Sound
+- [FlareSound](https://pixabay.com/es/sound-effects/fireworkblast-106275/)
+- [Music Island Loop](https://pixabay.com/es/sound-effects/island-loop-87bpm-132265/)

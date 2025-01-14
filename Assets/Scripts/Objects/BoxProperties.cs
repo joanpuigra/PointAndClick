@@ -6,7 +6,6 @@ public class BoxProperties : MonoBehaviour
     public GameObject gameManager;
     public GameObject inventory;
     public FlareGunProperties flareGun;
-    private InventoryManager inventoryManager;
     private ButtonsBehaviour buttons;
     private DialogueManager dialog;
     public bool movedBox = false;
@@ -16,7 +15,6 @@ public class BoxProperties : MonoBehaviour
     {
         buttons = gameManager.GetComponent<ButtonsBehaviour>();
         dialog = gameManager.GetComponent<DialogueManager>();
-        inventoryManager = inventory.GetComponent<InventoryManager>();
         flareGun = GameObject.FindGameObjectWithTag("FlareGun").GetComponent<FlareGunProperties>();
     }
 

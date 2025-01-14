@@ -6,6 +6,8 @@ public class PlayerProperties : MonoBehaviour
     public GameObject gameManager;
     private ButtonsBehaviour buttons;
     private DialogueManager dialog;
+    public SpriteRenderer newSprite;
+    public bool isActive = false;
 
     void Start()
     {
@@ -47,5 +49,11 @@ public class PlayerProperties : MonoBehaviour
         {
             dialog.ShowMessage(3, "Take");
         }
+    }
+
+    public void UseFlareGun()
+    {
+        isActive = true;
+        this.GetComponent<SpriteRenderer>().sprite = this.newSprite.sprite;
     }
 }

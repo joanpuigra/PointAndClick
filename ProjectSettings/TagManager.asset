@@ -9,6 +9,8 @@ TagManager:
   - Rama
   - Box
   - FlareGun
+  - Arm
+  - FlareGunAnimation
   layers:
   - Default
   - TransparentFX
